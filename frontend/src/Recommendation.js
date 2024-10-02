@@ -20,7 +20,7 @@ function Recommendation() {
                 return;
             }
 
-            const response = await axios.get(`https://mrs-backend.onrender.com/api/recommend?title=${movie}`);
+            const response = await axios.get(`https://deploy-mrs-backend.onrender.com/api/recommend?title=${movie}`);
             const movieTitles = response.data;
             const movieData = await Promise.all(movieTitles.map(fetchMovieDetails));
             setRecommendations(movieData);
@@ -55,7 +55,7 @@ function Recommendation() {
     const fetchSuggestions = async (query) => {
         try {
             if (query.length > 0) {
-                const response = await axios.get(`https://mrs-backend.onrender.com/api/suggestions?query=${query}`);
+                const response = await axios.get(`https://deploy-mrs-backend.onrender.com/api/suggestions?query=${query}`);
                 setSuggestions(response.data);
             } else {
                 setSuggestions([]);

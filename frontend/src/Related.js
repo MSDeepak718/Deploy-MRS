@@ -18,7 +18,7 @@ function Related() {
     useEffect(() => {
         const fetchRecommendations = async () => {
             try {
-                const response = await axios.get(`https://mrs-backend.onrender.com/api/collaborative-recommend?title=${movieTitle}`);
+                const response = await axios.get(`https://deploy-mrs-backend.onrender.com/api/collaborative-recommend?title=${movieTitle}`);
                 const movieDetails = await Promise.all(
                     response.data.map(async (title) => {
                         const movieResponse = await axios.get(`${TMDB_BASE_URL}/search/movie`, {
